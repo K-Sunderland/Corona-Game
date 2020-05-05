@@ -27,8 +27,8 @@
 #include "Dude.h"
 #include <random>
 #include <algorithm>
-#include "box.h"
-#include "Levels.h"
+#include "Box.h"
+#include "Drawing.h"
 #include <vector>
 using namespace std;
 class Game
@@ -43,11 +43,6 @@ private:
 	void UpdateModel();
 	/********************************/
 	/*  User Functions              */
-	void DrawInstructions(int x, int y);
-	void DrawGameOver(int x, int y);
-	void DrawGameOverText(int x, int y);
-	void DrawGameContinueText(int x, int y);
-	void DrawScoreBar(int x, int y);
 	void levelSelect(int level, int indexEnd);
 	/********************************/
 private:
@@ -55,27 +50,32 @@ private:
 	Graphics gfx;
 	/********************************/
 	/*  User Variables   */
-	bool isFinished = false;
-	bool isStarted = false;
 	std::random_device rd;
 	std::mt19937 rng;
 	std::uniform_int_distribution<int> xDist;
 	std::uniform_int_distribution<int> yDist;
-	int nPoo = 30;
 	vector<Poo> poos;
-	int randomVelocityX[6] = { 1 , -1, 2, -2, 3, -3 };
-	int randomVelocityY[6] = { 1 , -1, 2, -2, 3, -3 };
+	int randomVelocityX[4] = { 1 , -1, 2, -2};
+	int randomVelocityY[4] = { 1 , -1, 2, -2};
 	Dude dude; 
-	bool restart = false;
 	Box box;
-	int level = 0;
+	bool isFinished = false;
+	bool isStarted = false;
+	bool restart = false;
+	int level = 1;
 	bool levAdd = false;
 	bool enterPressed = false;
-	bool instructionDrawn = true;
+	bool instructionDrawn = false;
 	bool gameOver = false;
 	int difficulty = 0;
-	bool difficultySelected = false;
+	bool difficultySelected = true;
+	bool easyColor = false;
 	bool normalColor = true;
 	bool hardColor = false;
+	int colorIndex = 1;
+	bool colorAdd = false;
+	bool colorSub = false;
+	bool initialized = false;
+	bool gameRun = false;
 	/********************************/
 };

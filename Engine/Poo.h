@@ -5,13 +5,12 @@ class Poo
 {
 public:
 	
-	void Init(int in_x, int in_y, int in_vx, int in_vy);
+	void Init(int in_x, int in_y, int in_vx, int in_vy, Dude& dude);
 	void Update();
 	void StopPoo();
 	bool ProcessCollision(Dude& dude);
 	void Draw(Graphics& gfx) const;
 	bool IsEaten() const;
-	void setIsEaten(bool input);
 	int getX() const;
 	int getY() const;
 	int getWidth() const;
@@ -26,8 +25,8 @@ private:
 	int y;
 	int vx;
 	int vy;
-	static constexpr int width = 21;
-	static constexpr int height = 23;
+	static constexpr int width = 17;
+	static constexpr int height = 17;
 	bool isEaten = false;
 	
 };

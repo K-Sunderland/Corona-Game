@@ -4,23 +4,25 @@
 #include "Graphics.h"
 class Box {
 public:
-	void Flash();
+	 // void Flash();
 	void RandPos();
 	void ProcessCollision(Dude& dude);
-	void Draw(Graphics& gfx);
+	void Draw(Graphics& gfx, int level);
 	void ScoreBar(Graphics& gfx, int x);
-	void setScore(int input);
+	void resetScore();
 	int getScore();
 	void setScoreInc(int input);
 private:
 	int score = 0;
+	/* 
 	int r = 0;
 	int g = 255;
 	int b = 127;
+	*/
 	int x;
 	int y;
-	static constexpr int width = 20;
-	static constexpr int height = 20;
+	int width = 10;
+	int height = 10;
 	bool colorInc;
 	int scoreInc;
 };

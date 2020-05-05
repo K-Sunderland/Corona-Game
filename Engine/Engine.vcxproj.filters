@@ -57,7 +57,7 @@
     <ClInclude Include="Box.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Levels.h">
+    <ClInclude Include="Drawing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -92,7 +92,7 @@
     <ClCompile Include="Box.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Levels.Cpp">
+    <ClCompile Include="Drawing.Cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -110,10 +110,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\Potato.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\Capture.ico">
+    <Image Include="..\..\Covid.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

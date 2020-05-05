@@ -7,16 +7,16 @@ public:
 	void ClampToScreen();
 	void Draw(Graphics& gfx) const;
 	bool Update( const Keyboard& kbd);
-	int getX();
-	int getY();
-	int getHeight();
-	int getWidth();
+	int getX()const;
+	int getY() const;
+	int getHeight() const;
+	int getWidth() const;
 	void setVals(int x, int y );
 private:
 	int x = 400;
 	int y = 300;
-	static constexpr int width = 26;
-	static constexpr int height = 23;
+	static constexpr int width = 24;
+	static constexpr int height = 26;
 	int velocity = 2;
 	
 };
