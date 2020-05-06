@@ -20,3 +20,5 @@ void drawScoreBar(Graphics& gfx, int x, int y);
 void drawEasy(Graphics& gfx, bool color);
 void drawSelect(Graphics& gfx);
 void drawPressEnter(Graphics& gfx, int x, int y);
+void drawEnding(Graphics& gfx, int x, int y);
+void drawToiletPaperWall(Graphics& gfx, int x, int y);

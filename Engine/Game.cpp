@@ -44,7 +44,6 @@ void Game::Go()
 void Game::UpdateModel()
 {
     if (!isStarted) {
-       
 		if (!instructionDrawn) {
 			drawInstructions(gfx, 200, 151);
 			//drawDescription(gfx, 210, 100);
@@ -391,7 +390,7 @@ void Game::UpdateModel()
 				drawPressEnter(gfx, 316, 470);
 
 			}
-			dude.setVals(374, 277);
+			dude.resetVals();
 			if (wnd.kbd.KeyIsPressed(VK_RETURN)) {
 				if (!enterPressed) {
 					initialized = true;
@@ -418,25 +417,36 @@ void Game::UpdateModel()
 		}
 	}
 	if (isFinished) {
-		drawGameOver(gfx, 250, 216);
 		if (box.getScore() == 750 && level != 15) {
+			drawGameOver(gfx, 250, 216);
 			drawGameContinueText(gfx, 285, 265);
 			if (!levAdd) {
 				level++;
 				levAdd = true;
 			}
 		}
-		else if (box.getScore() !=750) {
+		else if (box.getScore() != 750) {
+			drawGameOver(gfx, 250, 216);
 			drawGameOverText(gfx, 275, 265);
 		}
 		else if (gameOver) {
-		
+
+			drawToiletPaperWall(gfx, 100, 100);
+			
 		}
-		
+
 		for (size_t i = 0; i < poos.size(); i++) {
 			poos[i].StopPoo();
 		}
 		if (wnd.kbd.KeyIsPressed(VK_RETURN)) {
+			if (gameOver) {
+				isStarted = false;
+				instructionDrawn = true;
+				level = 1;
+				gameOver = false;
+				difficultySelected = false;
+			
+			}
 			isFinished = false;
 			initialized = false;
 			gameRun = false;
@@ -444,25 +454,29 @@ void Game::UpdateModel()
 			enterPressed = true;
 		}
 	}
+	
 }
 
 void Game::ComposeFrame() {
+	
+
 	if (gameRun) {
-		for (size_t i = 0; i < poos.size(); i++) {
-			poos[i].Draw(gfx);
-			poos[i].Update();
+		if (!gameOver) {
+			for (size_t i = 0; i < poos.size(); i++) {
+				poos[i].Draw(gfx);
+				poos[i].Update();
+			}
+			dude.Draw(gfx);
+			dude.Update(wnd.kbd);
+			dude.ClampToScreen();
+			box.ScoreBar(gfx, 27);
+			drawScoreBar(gfx, 25, 5);
 		}
-		dude.Draw(gfx);
-		dude.Update(wnd.kbd);
-		dude.ClampToScreen();
-		box.ScoreBar(gfx, 27);
-		drawScoreBar(gfx, 25 ,5);
 		if (!isFinished) {
 	    box.Draw(gfx, level);
 		box.ProcessCollision(dude);
 		}
 	}
-
 }
 // initializes poos with velocities specified by the level number
 void Game::levelSelect(int level, int indexEnd) {
