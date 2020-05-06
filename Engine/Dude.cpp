@@ -598,10 +598,10 @@ void Dude::Draw(Graphics& gfx) const {
 		return width;
 	}
 
-	void Dude::setVals(int inX, int inY) 
+	void Dude::resetVals()  
 	{
-		x = inX;
-		y = inY;
+		x = 374;
+	    y = 277;
 
 	}
 

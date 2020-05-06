@@ -11,7 +11,7 @@ public:
 	int getY() const;
 	int getHeight() const;
 	int getWidth() const;
-	void setVals(int x, int y );
+	void resetVals();
 private:
 	int x = 400;
 	int y = 300;
