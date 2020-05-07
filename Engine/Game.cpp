@@ -383,14 +383,15 @@ void Game::UpdateModel()
 			}
 			levAdd = false;
 			drawLevel(level, gfx);
+			// draw press enter under level number
 			if (level != 15) {
 				drawPressEnter(gfx, 316, 350);
 			}
 			else {
 				drawPressEnter(gfx, 316, 470);
-
 			}
 			dude.resetVals();
+			// enter game with enterpress on level screen
 			if (wnd.kbd.KeyIsPressed(VK_RETURN)) {
 				if (!enterPressed) {
 					initialized = true;
@@ -409,15 +410,18 @@ void Game::UpdateModel()
 				isFinished = true;
 			}
 		}
+		// ends game when score limit is reached
 		if (box.getScore() == 750) {
 			isFinished = true;
 		}
+		// completely ends game when conditions are met
 		if (box.getScore() == 750 && level == 16) {
 			isFinished = true;
 			gameOver = true;
 		}
-	}
+	} 
 	if (isFinished) {
+		// draws standard win
 		if (box.getScore() == 750 && level != 16) {
 			drawGameOver(gfx, 250, 216);
 			drawGameContinueText(gfx, 285, 265);
@@ -426,19 +430,20 @@ void Game::UpdateModel()
 				levAdd = true;
 			}
 		}
+		// draws game lost
 		else if (box.getScore() != 750) {
 			drawGameOver(gfx, 250, 216);
 			drawGameOverText(gfx, 275, 265);
 		}
+		// draws final game win
 		else if (gameOver) {
-
 			drawToiletPaperWall(gfx, 100, 100);
 			
 		}
-
 		for (size_t i = 0; i < corona.size(); i++) {
 			corona[i].StopCorona();
 		}
+		// resets everything 
 		if (wnd.kbd.KeyIsPressed(VK_RETURN)) {
 			if (gameOver) {
 				isStarted = false;
