@@ -23,7 +23,7 @@
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "Graphics.h"
-#include "Poo.h"
+#include "Corona.h"
 #include "Dude.h"
 #include <random>
 #include <algorithm>
@@ -54,7 +54,7 @@ private:
 	std::mt19937 rng;
 	std::uniform_int_distribution<int> xDist;
 	std::uniform_int_distribution<int> yDist;
-	vector<Poo> poos;
+	vector<Corona> corona;
 	int randomVelocityX[4] = { 1 , -1, 2, -2};
 	int randomVelocityY[4] = { 1 , -1, 2, -2};
 	Dude dude; 

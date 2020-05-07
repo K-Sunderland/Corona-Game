@@ -21,10 +21,9 @@
 #include "MainWindow.h"
 #include "Game.h"
 
-bool Poo::drawFinished = false;
 Game::Game(MainWindow& wnd)
 	:
-	poos(10),
+	corona(10),
 	wnd(wnd),
 	gfx(wnd),
 	rng(rd()),
@@ -134,83 +133,84 @@ void Game::UpdateModel()
     }
 
 	else {
+		// initialization 
 		if (!initialized) {
 			// easy difficulty
 			if (difficulty == 0) {
 				switch (level) {
 
 				case 1:
-					poos.resize(2);
+					corona.resize(2);
 					levelSelect(level, 2);
 					box.setScoreInc(375);
 					break;
 				case 2:
-					poos.resize(3);
+					corona.resize(3);
 					levelSelect(level, 2);
 					box.setScoreInc(375);
 					break;
 				case 3:
-					poos.resize(4);
+					corona.resize(4);
 					levelSelect(level, 2);
 					box.setScoreInc(375);
 					break;
 				case 4:
-					poos.resize(5);
+					corona.resize(5);
 					levelSelect(level, 2);
 					box.setScoreInc(250);
 					break;
 				case 5:
-					poos.resize(6);
+					corona.resize(6);
 					levelSelect(level, 2);
 					box.setScoreInc(250);
 					break;
 				case 6:
-					poos.resize(7);
+					corona.resize(7);
 					levelSelect(level, 2);
 					box.setScoreInc(250);
 					break;
 				case 7:
-					poos.resize(8);
+					corona.resize(8);
 					levelSelect(level, 2);
 					box.setScoreInc(150);
 					break;
 				case 8:
-					poos.resize(9);
+					corona.resize(9);
 					levelSelect(level, 2);
 					box.setScoreInc(150);
 					break;
 				case 9:
-					poos.resize(10);
+					corona.resize(10);
 					levelSelect(level, 2);
 					box.setScoreInc(150);
 					break;
 				case 10:
-					poos.resize(11);
+					corona.resize(11);
 					levelSelect(level, 2);
 					box.setScoreInc(125);
 					break;
 				case 11:
-					poos.resize(12);
+					corona.resize(12);
 					levelSelect(level, 2);
 					box.setScoreInc(125);
 					break;
 				case 12:
-					poos.resize(13);
+					corona.resize(13);
 					levelSelect(level, 2);
 					box.setScoreInc(125);
 					break;
 				case 13:
-					poos.resize(14);
+					corona.resize(14);
 					levelSelect(level, 2);
 					box.setScoreInc(75);
 					break;
 				case 14:
-					poos.resize(15);
+					corona.resize(15);
 					levelSelect(level, 2);
 					box.setScoreInc(75);
 					break;
 				case 15:
-					poos.resize(20);
+					corona.resize(20);
 					levelSelect(level, 2);
 					box.setScoreInc(75);
 					drawFinalRound(gfx);
@@ -222,77 +222,77 @@ void Game::UpdateModel()
 				switch (level) {
 
 				case 1:
-					poos.resize(6);
+					corona.resize(6);
 					levelSelect(level, 2);
 					box.setScoreInc(375);
 					break;
 				case 2:
-					poos.resize(8);
+					corona.resize(8);
 					levelSelect(level, 2);
 					box.setScoreInc(375);
 					break;
 				case 3:
-					poos.resize(10);
+					corona.resize(10);
 					levelSelect(level, 2);
 					box.setScoreInc(250);
 					break;
 				case 4:
-					poos.resize(12);
+					corona.resize(12);
 					levelSelect(level, 2);
 					box.setScoreInc(250);
 					break;
 				case 5:
-					poos.resize(14);
+					corona.resize(14);
 					levelSelect(level, 2);
 					box.setScoreInc(150);
 					break;
 				case 6:
-					poos.resize(16);
+					corona.resize(16);
 					levelSelect(level, 2);
 					box.setScoreInc(150);
 					break;
 				case 7:
-					poos.resize(18);
+					corona.resize(18);
 					levelSelect(level, 2);
 					box.setScoreInc(150);
 					break;
 				case 8:
-					poos.resize(20);
+					corona.resize(20);
 					levelSelect(level, 2);
 					box.setScoreInc(125);
 					break;
 				case 9:
-					poos.resize(22);
+					corona.resize(22);
 					levelSelect(level, 2);
 					box.setScoreInc(125);
 					break;
 				case 10:
-					poos.resize(24);
+					corona.resize(24);
 					levelSelect(level, 2);
 					box.setScoreInc(75);
 					break;
 				case 11:
-					poos.resize(26);
+					corona.resize(26);
 					levelSelect(level, 2);
 					box.setScoreInc(75);
 					break;
 				case 12:
-					poos.resize(28);
+					corona.resize(28);
 					levelSelect(level, 2);
 					box.setScoreInc(75);
 					break;
 				case 13:
-					poos.resize(30);
+					corona.resize(30);
 					levelSelect(level, 2);
 					box.setScoreInc(75);
 					break;
 				case 14:
-					poos.resize(32);
+					corona.resize(32);
 					levelSelect(level, 2);
 					box.setScoreInc(75);
 					break;
 				case 15:
-					poos.resize(35);
+					corona.resize(35);
 					levelSelect(level, 2);
 					box.setScoreInc(50);
 					drawFinalRound(gfx);
@@ -304,77 +304,77 @@ void Game::UpdateModel()
 				switch (level) {
 
 				case 1:
-					poos.resize(6);
+					corona.resize(6);
 					levelSelect(level, 2);
 					box.setScoreInc(375);
 					break;
 				case 2:
-					poos.resize(8);
+					corona.resize(8);
 					levelSelect(level, 2);
 					box.setScoreInc(375);
 					break;
 				case 3:
-					poos.resize(10);
+					corona.resize(10);
 					levelSelect(level, 2);
 					box.setScoreInc(250);
 					break;
 				case 4:
-					poos.resize(12);
+					corona.resize(12);
 					levelSelect(level, 2);
 					box.setScoreInc(250);
 					break;
 				case 5:
-					poos.resize(14);
+					corona.resize(14);
 					levelSelect(level, 2);
 					box.setScoreInc(150);
 					break;
 				case 6:
-					poos.resize(16);
+					corona.resize(16);
 					levelSelect(level, 2);
 					box.setScoreInc(150);
 					break;
 				case 7:
-					poos.resize(18);
+					corona.resize(18);
 					levelSelect(level, 2);
 					box.setScoreInc(150);
 					break;
 				case 8:
-					poos.resize(20);
+					corona.resize(20);
 					levelSelect(level, 2);
 					box.setScoreInc(125);
 					break;
 				case 9:
-					poos.resize(22);
+					corona.resize(22);
 					levelSelect(level, 2);
 					box.setScoreInc(125);
 					break;
 				case 10:
-					poos.resize(24);
+					corona.resize(24);
 					levelSelect(level, 2);
 					box.setScoreInc(75);
 					break;
 				case 11:
-					poos.resize(18);
+					corona.resize(18);
 					levelSelect(level, 4);
 					box.setScoreInc(75);
 					break;
 				case 12:
-					poos.resize(20);
+					corona.resize(20);
 					levelSelect(level, 4);
 					box.setScoreInc(75);
 					break;
 				case 13:
-					poos.resize(22);
+					corona.resize(22);
 					levelSelect(level, 4);
 					box.setScoreInc(75);
 					break;
 				case 14:
-					poos.resize(24);
+					corona.resize(24);
 					levelSelect(level, 4);
 					box.setScoreInc(75);
 					break;
 				case 15:
-					poos.resize(26);
+					corona.resize(26);
 					levelSelect(level, 4);
 					box.setScoreInc(50);
 					drawFinalRound(gfx);
@@ -403,8 +403,9 @@ void Game::UpdateModel()
         }
     }
 	if (gameRun) {
-		for (size_t i = 0; i < poos.size(); i++) {
-			if (poos[i].ProcessCollision(dude)) {
+		// checks if dude has collided with Corona and ends the game
+		for (size_t i = 0; i < corona.size(); i++) {
+			if (corona[i].ProcessCollision(dude)) {
 				isFinished = true;
 			}
 		}
@@ -435,8 +436,8 @@ void Game::UpdateModel()
 			
 		}
 
-		for (size_t i = 0; i < poos.size(); i++) {
-			poos[i].StopPoo();
+		for (size_t i = 0; i < corona.size(); i++) {
+			corona[i].StopCorona();
 		}
 		if (wnd.kbd.KeyIsPressed(VK_RETURN)) {
 			if (gameOver) {
@@ -462,9 +463,9 @@ void Game::ComposeFrame() {
 
 	if (gameRun) {
 		if (!gameOver) {
-			for (size_t i = 0; i < poos.size(); i++) {
-				poos[i].Draw(gfx);
-				poos[i].Update();
+			for (size_t i = 0; i < corona.size(); i++) {
+				corona[i].Draw(gfx);
+				corona[i].Update();
 			}
 			dude.Draw(gfx);
 			dude.Update(wnd.kbd);
@@ -478,11 +479,11 @@ void Game::ComposeFrame() {
 		}
 	}
 }
-// initializes poos with velocities specified by the level number
+// initializes corona with velocities specified by the level number
 void Game::levelSelect(int level, int indexEnd) {
-	for (size_t i = 0; i < poos.size(); i++) {
+	for (size_t i = 0; i < corona.size(); i++) {
 		std::random_shuffle(&randomVelocityX[0], &randomVelocityX[indexEnd]);
 		std::random_shuffle(&randomVelocityY[0], &randomVelocityY[indexEnd]);
-		poos[i].Init(xDist(rng), yDist(rng), randomVelocityX[0], randomVelocityY[0], dude);
+		corona[i].Init(xDist(rng), yDist(rng), randomVelocityX[0], randomVelocityY[0], dude);
 	}
 }

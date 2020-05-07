@@ -1,25 +1,25 @@
-#include "Poo.h"
+#include "Corona.h"
 #include "Graphics.h"
 #include <assert.h>
 
-void Poo::Init(int in_x, int in_y, int in_vx, int in_vy, Dude& dude)
+void Corona::Init(int in_x, int in_y, int in_vx, int in_vy, Dude& dude)
 {
 
 	x = in_x;
 	y = in_y;
 	vx = in_vx;
 	vy = in_vy;
-	// ensures that all poos are initialized at least 100 pixels from dude
+	// ensures that all corona are initialized at least 100 pixels from dude
 
 		const int duderight = dude.getX() + dude.getWidth();
 		const int dudebottom = dude.getY() + dude.getHeight();
-		const int pooright = x + width;
-		const int poobottom = y + height;
+		const int coronaright = x + width;
+		const int coronabottom = y + height;
 		if (
 			duderight + 100 >= x &&
-			dude.getX() - 100 <= pooright &&
+			dude.getX() - 100 <= coronaright &&
 			dudebottom + 100 >= y &&
-			dude.getY() - 100 <= poobottom) {
+			dude.getY() - 100 <= coronabottom) {
 			x = 300;
 			y = 150;
 			vx = 1;
@@ -28,7 +28,7 @@ void Poo::Init(int in_x, int in_y, int in_vx, int in_vy, Dude& dude)
 	
 }
 
-void Poo::Update()
+void Corona::Update()
 {
 	
 	x += vx;
@@ -57,24 +57,24 @@ void Poo::Update()
 	
 }
 
-void Poo::StopPoo()
+void Corona::StopCorona()
 {
 	vx = 0;
 	vy = 0;
 }
 
-bool Poo::ProcessCollision( Dude& dude)
+bool Corona::ProcessCollision( Dude& dude)
 {
 	
 	const int duderight = dude.getX() + dude.getWidth();
 	const int dudebottom = dude.getY() + dude.getHeight();
-	const int pooright = x + width;
-	const int poobottom = y + height;
+	const int coronaright = x + width;
+	const int coronabottom = y + height;
 	if (
 		duderight -2 >= x +2 &&
-		dude.getX() +2 <= pooright - 2 &&
+		dude.getX() +2 <= coronaright - 2 &&
 		dudebottom  -2 >= y + 2&&
-		dude.getY() +2 <= poobottom - 2 )
+		dude.getY() +2 <= coronabottom - 2 )
 		{
 		return true;
 }
@@ -85,33 +85,27 @@ bool Poo::ProcessCollision( Dude& dude)
 }
 
 
-int Poo::getX() const
+int Corona::getX() const
 {
 	return x;
 }
 
-int Poo::getY() const
+int Corona::getY() const
 {
 	return y;
 }
 
-int Poo::getWidth() const
+int Corona::getWidth() const
 {
 	return width;
 }
 
-int Poo::getHeight() const
+int Corona::getHeight() const
 {
 	return height;
 }
 
- bool Poo::readDrawFinished()
-{
-	
-	return drawFinished;
-}
-
- void Poo::Draw(Graphics& gfx)  const {
+ void Corona::Draw(Graphics& gfx)  const {
 	 gfx.PutPixel(4 + x, 0 + y, 255, 0, 0);
 	 gfx.PutPixel(7 + x, 0 + y, 255, 0, 0);
 	 gfx.PutPixel(8 + x, 0 + y, 255, 0, 0);
@@ -264,15 +258,10 @@ int Poo::getHeight() const
 
  }
 
-bool Poo::IsEaten() const
+bool Corona::IsEaten() const
 {
 	
 	return isEaten;
-}
-void Poo::setDrawFinished(bool input) 
-{
-	
-	drawFinished = input;
 }
 
 
