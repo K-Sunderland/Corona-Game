@@ -411,13 +411,13 @@ void Game::UpdateModel()
 		if (box.getScore() == 750) {
 			isFinished = true;
 		}
-		if (box.getScore() == 750 && level == 15) {
+		if (box.getScore() == 750 && level == 16) {
 			isFinished = true;
 			gameOver = true;
 		}
 	}
 	if (isFinished) {
-		if (box.getScore() == 750 && level != 15) {
+		if (box.getScore() == 750 && level != 16) {
 			drawGameOver(gfx, 250, 216);
 			drawGameContinueText(gfx, 285, 265);
 			if (!levAdd) {
