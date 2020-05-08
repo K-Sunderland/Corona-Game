@@ -134,7 +134,8 @@ void Game::UpdateModel()
 
 	else {
 		// initialization 
-		if (!initialized) {
+		if (!initialized) 
+		{
 			// easy difficulty
 			if (difficulty == 0) {
 				switch (level) {
